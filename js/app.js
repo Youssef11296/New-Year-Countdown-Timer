@@ -25,10 +25,14 @@ const counter = () => {
     const seconds = Math.floor(totalSeconds) % 60;
 
     // Set The Values To The Dom Elements
-    daysEl.innerHTML = days;
-    hoursEl.innerHTML = hours;
-    minutesEl.innerHTML = minutes;
-    secondsEl.innerHTML = seconds;
+    daysEl.innerHTML = formatValue(days);
+    hoursEl.innerHTML = formatValue(hours);
+    minutesEl.innerHTML = formatValue(minutes);
+    secondsEl.innerHTML = formatValue(seconds);
+}
+
+const formatValue = time => {
+    return time < 10 ? '0' + time : time;
 }
 
 // Intialize The Counter Every One Second
